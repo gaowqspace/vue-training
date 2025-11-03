@@ -21,8 +21,8 @@
 // 数据，原来写在data中，此时的name age tel 都不是响应式数据
 let name = "张三"; // 此时的name不是响应式的
 let age = "18"; // 此时的age不是响应式的
-let tel = "13812345678"; //此时的tel不是响应式的
-let address = "北京昌平区宏福苑·宏福科技园";
+let tel = "13812345678"; // 此时的tel不是响应式的
+let address = "北京昌平区宏福苑·宏福科技园";   // address 不是响应式数据
 
 // Methods
 function changeName() {

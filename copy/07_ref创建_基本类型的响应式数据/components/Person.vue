@@ -31,10 +31,6 @@ console.log(2,age);
 console.log(3,tel);
 console.log(4,address);
 
-
-
-
-
 // Methods
 function changeName() {
   console.log(1);
