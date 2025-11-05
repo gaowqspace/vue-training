@@ -3,8 +3,7 @@
     <!-- 导航区 -->
     <ul>
       <li v-for="news in newsList" :key="news.id">
-        <!-- 第一种写法： to的字符串写法 -->
-        <!-- <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`">{{ news.title }}</RouterLink> -->
+        <button @click="showNewsDetail(news)">查看新闻</button>
 
         <!-- 第二种写法：to的对象写法 -->
         <RouterLink :to="{
@@ -28,7 +27,10 @@
 
 <script setup lang="ts" name="News">
 import { reactive } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
 
 const newsList = reactive([
   { id: 'n01', title: '工间动一动', content: '工作间隙，活动活动筋骨，放松眼睛，缓解疲劳。' },
@@ -36,6 +38,31 @@ const newsList = reactive([
   { id: 'n03', title: '城建事业部', content: '城建事业部包含4个子部门' },
   { id: 'n04', title: 'BIM中心', content: 'BIM中心致力于建筑信息模型技术的应用与推广' },
 ])
+
+interface NewsInter{
+  id:string,
+  title:string,
+  content:string,
+}
+
+function showNewsDetail(news:NewsInter) {
+  router.push({
+    name: 'xiang',
+    query: {
+      id: news.id,
+      title: news.title,
+      content: news.content,
+    }
+  })
+}
+
+console.log(route.query);
+console.log(route.params);
+console.log(router.push);
+console.log(router.replace);
+
+
+
 </script>
 
 <style scoped>

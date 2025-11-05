@@ -5,6 +5,20 @@
 </template>
 
 <script setup lang="ts" name="Home">
+import { onMounted } from 'vue';
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
+
+/* onMounted(()=>{
+  setTimeout(()=>{
+    console.log('@');
+    // 在此处编写代码，让路由实现跳转
+    router.push('/news');
+  },3000)
+}); */
+
+
 
 </script>
 
