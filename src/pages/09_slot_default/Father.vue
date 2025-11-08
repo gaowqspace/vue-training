@@ -14,7 +14,6 @@
         <video :src="videoUrl" controls></video>
       </Category>
     </div>
-
   </div>
 </template>
 
